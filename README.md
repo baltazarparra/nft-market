@@ -1,2 +1,3 @@
-# nft-market
-ĐApp for buy NFT
+# NFT Market
+
+NFT Marketplace ĐApp
