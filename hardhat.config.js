@@ -1,4 +1,4 @@
-require("@nomiclabs/hardhat-waffle")
+require("@nomiclabs/hardhat-waffle");
 
 module.exports = {
   solidity: "0.8.4",
@@ -8,4 +8,4 @@ module.exports = {
     cache: "./src/backend/cache",
     tests: "./src/backend/test"
   },
-}
+};
