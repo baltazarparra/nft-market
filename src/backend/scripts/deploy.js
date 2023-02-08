@@ -1,17 +1,18 @@
-async function main() {
+const { ethers } = require("hardhat");
 
+async function main() {
   const [deployer] = await ethers.getSigners();
 
   console.log("Deploying contracts with the account:", deployer.address);
   console.log("Account balance:", (await deployer.getBalance()).toString());
 
-  // deploy contracts
-  const Greeter = await ethers.getContractFactory("Greeter");
-  const greeter = await Greeter.deploy("Hello, world!");
+  const NFT = await ethers.getContractFactory("NFT");
+  const nft = await NFT.deploy();
 
-  console.log("Greeter address:", greeter.address);
+  console.log("NFT contract address", nft.address);
 
-  saveFrontendFiles(greeter , "Greeter");
+  // Save copies of each contracts abi and address to the frontend.
+  saveFrontendFiles(nft , "NFT");
 }
 
 function saveFrontendFiles(contract, name) {
